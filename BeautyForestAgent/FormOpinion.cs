@@ -21,5 +21,45 @@ namespace BeautyForestAgent
             MessageBox.Show("건의사항이 보내졌습니다.", "건의사항 발송");
             this.Close();
         }
+
+        private void TsbtnFont_Click(object sender, EventArgs e)
+        {
+            DialogResult result = this.fontDlg.ShowDialog();
+            switch (result)
+            {
+                case DialogResult.OK:
+                    //this.rtbText.Font = this.fontDlg.Font;
+                    this.rtbText.SelectionFont = this.fontDlg.Font;
+                    break;
+                case DialogResult.Cancel:
+                    MessageBox.Show("폰트 변경을 취소했습니다", "알림");
+                    break;
+            }
+        }
+
+        private void TsbtnColor_Click(object sender, EventArgs e)
+        {
+            DialogResult result = this.colorDlg.ShowDialog();
+            switch (result)
+            {
+                case DialogResult.OK:
+                    this.rtbText.SelectionColor = this.colorDlg.Color;
+                    break;
+                case DialogResult.Cancel:
+                    MessageBox.Show("색 변경을 취소했습니다", "알림");
+                    break;
+            }
+
+        }
+
+        private void ToolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
